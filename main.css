@@ -7,7 +7,7 @@
     /* Haupt-Textfarbe */
     --text-secondary: #666666;
     /* Sekundäre Textfarbe */
-   
+    --radius : 10px;
     /* Haupt-Hintergrundfarbe */
     --bg-nav: #ffffff;
     /* Sekundärer Hintergrundfarbe */
@@ -21,56 +21,75 @@
     --background-primary: #121212;
     --text-primary: #ffffff;
 }
-
 body {
     background-color: rgb(44, 42, 42);
     margin: 0;
     color: var(--font-color);
 }
-
 header {
     background-color: rgb(68, 68, 68);
     height: auto;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+
+.sub-header{
+    background-color: #111010;
+    display: flex;
+    justify-content: space-evenly;
+}
+.untertitel{
+    color: var(--font-color);
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
 .container {
+    display: flex;
+    justify-content: space-between;   
     width: 80vw;
     height: 80vh;
     border-radius: 20px;
     margin: 0 auto;
-    background-color: var( --bg-container);
+    background-color: var(--bg-container);
     padding: 20px;
     margin-top: 20px;
+    
 }
-
+.bild{
+    width: 50vw;
+    height: 50vh;
+    border-radius: var(--radius);
+    margin-left: 20px;
+}
 .header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    height: 80px;
+    height: 10vh;
     width: auto;
     text-align: center;
-    align-items: center;    
+    align-items: center;
 }
-
-.titel{
+.titel {
     font-size: 30px;
     color: var(--font-color);
     font-weight: bold;
+  
 }
-
 .nav {
     display: flex;
     justify-content: space-around;
 }
-
 .nav ul {
     display: flex;
     /* padding-left: 10px; */
     text-decoration: none;
 }
-
 .nav ul li {
     list-style: none;
     padding: 10px;
@@ -92,10 +111,10 @@ header {
         width: 100%;
         height: auto;
     }
+
     .nav ul {
         display: flex;
         /* padding-left: 10px; */
         background-color: var(--primary-color);
     }
 }
-
