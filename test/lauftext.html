@@ -1,0 +1,50 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Liveticker - simpel</title>
+  <link rel="icon" href="../pics/icon.png" type="image/png">
+  <style>
+    body { margin:12px; background:#ffffff; color:#fff; font-family:Arial, sans-serif; }
+    .ticker-wrap { overflow:hidden; background:#222; border-radius:6px; padding:8px; }
+    .ticker { display:flex; gap:28px; align-items:center; white-space:nowrap;
+              animation:scroll 12s linear infinite; }
+    .item { display:inline-flex; gap:8px; align-items:center; }
+    .icon { width:28px; height:28px; object-fit:cover; border-radius:4px; }
+    .pic { width:48px; height:32px; object-fit:cover; border-radius:4px; }
+    .text { font-size:14px; }
+    .ticker-wrap:hover .ticker { animation-play-state:paused; }
+    @keyframes scroll { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+  </style>
+</head>
+<body>
+  <div class="ticker-wrap" aria-live="polite">
+    <div class="ticker" id="ticker">
+      <div class="item">
+        <!-- <img class="icon" src="../pics/css.png" alt="Icon"> -->
+        <div class="text">Willkommen!</div>
+        <img class="pic" src="../pics/css.jpeg" alt="Bild 1">
+      </div>
+      <div class="item">
+        <img class="icon" src="../pics/php.png" alt="Icon">
+        <div class="text">Neues Projekt online.</div>
+        <!-- <img class="pic" src="../pics/test.jpeg" alt="Bild 2"> -->
+      </div>
+      <div class="item">
+        <img class="icon" src="../pics/icon.png" alt="Icon">
+        <div class="text">Kontakt: nina.nuss@example.com</div>
+        <!-- <img class="pic" src="../pics/test.jpeg" alt="Bild 3"> -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // sehr simpel: Inhalt duplizieren für nahtlosen Loop
+    const ticker = document.getElementById('ticker');
+    ticker.innerHTML += ticker.innerHTML;
+  </script>
+</body>
+</html>
+// ...existing code...

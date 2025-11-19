@@ -2,8 +2,9 @@
 <html lang="en">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <script src="bootstrap/js/bootstrap.bundle.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-<body>
+<body data-bs-theme="Light">
 
     <head>
         <meta charset="UTF-8">
@@ -11,25 +12,30 @@
         <title>Document</title>
         <link rel="stylesheet" href="main.css">
     </head>
-    <header>
+    <header class="">
         <div class="header">
             <p class="titel">Nina Nuss</p>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Projekte</a></li>
-                    <li><a href="#">Lebenslauf</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projekte.html">Projekte</a></li>
+                    <li><a href="lebenslauf.html">Lebenslauf</a></li>
                 </ul>
+                <button id="theme-toggle" class="btn btn-outline-secondary border-0 p-2">
+                    <i id="theme-icon" class="bi bi-sun-fill"></i>
+                </button>
             </nav>
+
         </div>
-        <div class="sub-header">
+        <div class="sub-header ">
             <p class="untertitel">Telefon: 43543554546</p>
             <p class="untertitel">E-mail: nina.nuss@gmail.com</p>
             <p class="untertitel">Adresse: meow.meomw.moew.moew</p>
         </div>
+
     </header>
     <section>
-        <div class="container">
+        <div class="w-100 d-flex justify-content-center align-items-center mx-auto my-4 p-4 ">
             <div>
                 <h2>Willkommen auf meiner Webseite</h2>
                 <p>Dies ist eine Beispielseite, die meine Projekte und meinen Lebenslauf präsentiert.</p>
@@ -38,15 +44,71 @@
                 <p>Kontaktieren Sie mich gerne für weitere Informationen.</p>
                 <p>Vielen Dank für Ihren Besuch!</p>
             </div>
-            <img src="pics/test.jpeg" alt="Mein Bild" class="bild">
-            <a href="/pics/test.jpeg" download="w3logo">
-                <img src="/images/myw3schoolsimage.jpg" alt="W3Schools">
-            </a>
+            <img src="pics/test.jpeg" alt="..." class="img img-thumbnail">
+
+        </div>
+
+        <div class="w-100 d-flex justify-content-center align-items-center shadow my-4 p-4 ">
+
+            <div class="container text-center">
+                <div class="row row-cols-2">
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
         <p>&copy; 2024 My Website</p>
     </footer>
 </body>
+<script>
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+        const body = document.body;
+        if (body.getAttribute('data-bs-theme') === 'dark') {
+            body.setAttribute('data-bs-theme', 'light');
+            localStorage.setItem("data-bs-theme", "light");
+        } else {
+            body.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem("data-bs-theme", "dark");
+        }
+    });
+    navElements = document.querySelectorAll('.nav ul li a');
+    navElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+            debugger
+            navElements.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        });
+    });
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     const savedTheme = localStorage.getItem("data-bs-theme");
+    //     if (savedTheme) {
+    //         document.body.setAttribute('data-bs-theme', savedTheme);
+    //     }
+    //     const progressBar = document.querySelector('.progress-bar');
+    //     let width = 0;
+    //     const interval = setInterval(function () {
+    //         if (width >= 70) {
+    //             clearInterval(interval);
+    //         } else {
+    //             width++;
+    //             progressBar.style.width = width + '%';
+    //         }
+    //     }, 30);
+    // });
+</script>
 
 </html>
