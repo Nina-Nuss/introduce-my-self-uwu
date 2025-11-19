@@ -107,14 +107,10 @@ header {
     
     font-weight: bold;
 }
-
-
-
 .active{
     text-decoration: underline;
     color: var(--text-secondary);
 }
-
 
 .nav ul li a {
     text-decoration: none;
